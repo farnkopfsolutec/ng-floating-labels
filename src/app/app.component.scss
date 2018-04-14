@@ -1,0 +1,43 @@
+$input-line-height: 30px;
+$input-padding-left: 5px;
+
+$label-padding-left-default: 7px;
+$label-padding-left-floated: 7px;
+
+$label-font-size-default: 14px;
+$label-font-size-floated: 10px;
+
+$label-top-default: 3px + (($input-line-height - $label-font-size-default) / 2);
+$label-top-floated: 1px;
+
+.label-input-group {
+  overflow: hidden;
+  position: relative;
+
+  input[type='text'] {
+    line-height: $input-line-height;
+    padding-left: $input-padding-left;
+
+    + label {
+      position: absolute;
+      cursor: text;
+      user-select: none;
+      transition: ease-in-out 200ms;
+      font-size: $label-font-size-default;
+    }
+
+    + .label {
+      font-size: $label-font-size-default;
+      top: $label-top-default;
+      left: $label-padding-left-default;
+    }
+
+    + .floated {
+      font-size: $label-font-size-floated;
+      top: $label-top-floated;
+      left: $label-padding-left-floated;
+    }
+  }
+}
+
+
